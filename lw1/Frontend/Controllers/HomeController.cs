@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Frontend.Models;
 using System.Net.Http;
-using System.Net;
+using System.Text;
+using System.Net.Http.Headers;
 
 namespace Frontend.Controllers
 {
@@ -42,24 +43,29 @@ namespace Frontend.Controllers
             return View();
         }
 
-        private async Task<string> GetResponseString(string url, string data)
+        private async Task<string> Post(string url, string data)
         {
             var httpClient = new HttpClient();
-            StringContent content = new StringContent(data);
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/plain"));
+            data = ("=" + data);            
+            var content = new StringContent(data, Encoding.UTF8, "application/x-www-form-urlencoded");
 
             var response = await httpClient.PostAsync(url, content);
-            var contents = await response.Content.ReadAsStringAsync();
+            var id = await response.Content.ReadAsStringAsync();
 
-            return contents;
-        }
+            return id;
+        }                
 
         [HttpPost]
-        public IActionResult Upload(string data)
-        {            
-            //HttpContent content = new StringContent(data);
-            //TODO: send data in POST request to backend and read returned id value from response
+        public IActionResult Upload([FromForm] string data)
+        {                                
+            //TODO: send data in POST request to backend and read returned id value from response            
             string url = "http://127.0.0.1:5000/api/values";
-            string res = GetResponseString(url, data).Result;            
+            string res = "";
+            if(data != null)
+            {
+                res = Post(url, data).Result;
+            }
             return Ok(res);
         }
     }
