@@ -1,0 +1,13 @@
+E:\C#Projs\RP\lw2\Frontend
+--output-path=obj\Debug\netcoreapp2.0\
+--application-name=Frontend
+--content-root=E:\C#Projs\RP\lw2\Frontend
+--file=E:\C#Projs\RP\lw2\Frontend\Views\Home\About.cshtml
+--file=E:\C#Projs\RP\lw2\Frontend\Views\Home\Contact.cshtml
+--file=E:\C#Projs\RP\lw2\Frontend\Views\Home\Index.cshtml
+--file=E:\C#Projs\RP\lw2\Frontend\Views\Home\Upload.cshtml
+--file=E:\C#Projs\RP\lw2\Frontend\Views\Shared\Error.cshtml
+--file=E:\C#Projs\RP\lw2\Frontend\Views\Shared\_Layout.cshtml
+--file=E:\C#Projs\RP\lw2\Frontend\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=E:\C#Projs\RP\lw2\Frontend\Views\_ViewImports.cshtml
+--file=E:\C#Projs\RP\lw2\Frontend\Views\_ViewStart.cshtml
