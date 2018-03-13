@@ -32,8 +32,30 @@ namespace Frontend.Controllers
             return View();
         }
                 
-        public IActionResult TextDetails()
-        {
+        private async Task<string> Get(string url)
+        {            
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/plain"));                        
+
+            var response = await httpClient.GetAsync(url);            
+            string value = "";
+            if (response.IsSuccessStatusCode)
+            {
+                value = await response.Content.ReadAsStringAsync();
+            }
+            else
+            {
+                value = response.StatusCode.ToString();
+            }            
+
+            return value;
+        }
+
+
+        public IActionResult TextDetails(string id)
+        {                        
+            string value = Get("http://127.0.0.1:5000/api/values/" + id).Result;
+            ViewData["Message"] = value;
             return View();
         }
 
@@ -71,7 +93,9 @@ namespace Frontend.Controllers
             {
                 res = Post(url, data).Result;
             }
-            return Ok(res);
+                        
+            string newUrl = "http://127.0.0.1:5001/Home/TextDetails?=" + res;
+            return new RedirectResult(newUrl);
         }
     }
 }

@@ -63,7 +63,12 @@ namespace TextRankCalc
                     consonantsCount++;
                 }
             }
-            return vowelsCount / consonantsCount;
+            float result = vowelsCount;
+            if(consonantsCount != 0)
+            {
+                result = vowelsCount / consonantsCount;
+            }
+            return result;
         }
 
         static void Main(string[] args)
