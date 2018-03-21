@@ -1,0 +1,10 @@
+E:\C#Projs\RP\lw5\VowelConsRater\obj\Debug\netcoreapp2.0\VowelConsRater.csproj.CoreCompileInputs.cache
+E:\C#Projs\RP\lw5\VowelConsRater\obj\Debug\netcoreapp2.0\VowelConsRater.AssemblyInfoInputs.cache
+E:\C#Projs\RP\lw5\VowelConsRater\obj\Debug\netcoreapp2.0\VowelConsRater.AssemblyInfo.cs
+E:\C#Projs\RP\lw5\VowelConsRater\bin\Debug\netcoreapp2.0\VowelConsRater.deps.json
+E:\C#Projs\RP\lw5\VowelConsRater\bin\Debug\netcoreapp2.0\VowelConsRater.runtimeconfig.json
+E:\C#Projs\RP\lw5\VowelConsRater\bin\Debug\netcoreapp2.0\VowelConsRater.runtimeconfig.dev.json
+E:\C#Projs\RP\lw5\VowelConsRater\bin\Debug\netcoreapp2.0\VowelConsRater.dll
+E:\C#Projs\RP\lw5\VowelConsRater\bin\Debug\netcoreapp2.0\VowelConsRater.pdb
+E:\C#Projs\RP\lw5\VowelConsRater\obj\Debug\netcoreapp2.0\VowelConsRater.dll
+E:\C#Projs\RP\lw5\VowelConsRater\obj\Debug\netcoreapp2.0\VowelConsRater.pdb
