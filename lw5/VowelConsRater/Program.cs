@@ -39,7 +39,13 @@ namespace VowelConsRater
             {
                 channel.ExchangeDeclare(exchange: exchange, 
                                         type: "direct");                
-                var queueName = channel.QueueDeclare().QueueName;
+                var queueName = "rank-task";
+                channel.QueueDeclare(queue: queueName,
+                    durable: false,
+                    exclusive: false,
+                    autoDelete: false,
+                    arguments: null);
+
 
                 channel.QueueBind(queue: queueName,
                                 exchange: exchange,
@@ -49,8 +55,7 @@ namespace VowelConsRater
                 consumer.Received += (model, ea) =>
                 {
                     var body = ea.Body;
-                    var message = Encoding.UTF8.GetString(body);
-                    Console.WriteLine(message);
+                    var message = Encoding.UTF8.GetString(body);                    
                     var msgArgs = Regex.Split(message, ":");                    
                     if(msgArgs.Length == 4 && msgArgs[0] == "VowelConsCounted")
                     {                
@@ -62,9 +67,7 @@ namespace VowelConsRater
                 };
                 channel.BasicConsume(queue: queueName,
                                     autoAck: true,
-                                    consumer: consumer);
-
-                Console.WriteLine("Waiting for messages");
+                                    consumer: consumer);                
                 Console.ReadLine();
             }
         }

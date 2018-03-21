@@ -85,7 +85,12 @@ namespace VowelConsCounter
             {
                 channel.ExchangeDeclare(exchange: inputExchange, 
                                         type: "direct");                
-                var queueName = channel.QueueDeclare().QueueName;
+                var queueName = "count-task";
+                channel.QueueDeclare(queue: queueName,
+                    durable: false,
+                    exclusive: false,
+                    autoDelete: false,
+                    arguments: null);
 
                 channel.QueueBind(queue: queueName,
                                 exchange: inputExchange,
@@ -98,15 +103,11 @@ namespace VowelConsCounter
                     var message = Encoding.UTF8.GetString(body);
                     var msgArgs = Regex.Split(message, ":");                    
                     if(msgArgs.Length == 2 && msgArgs[0] == "TextRankTask")
-                    {
-                        Console.WriteLine("Received");
+                    {                        
                         string id = msgArgs[1];
                         string text = GetTextById(id);
                         VowelConsCounted result = CalculateVowelsCons(text, vowels, consonants);
-                        result.Id = id;
-                        Console.WriteLine(result.Id);
-                        Console.WriteLine(result.Vowels);
-                        Console.WriteLine(result.Cons);
+                        result.Id = id;                     
                         // Дальше посылаем данные в другой компонент
                         SendDataToQueue(result, channel);
                     }
@@ -114,9 +115,7 @@ namespace VowelConsCounter
                 };
                 channel.BasicConsume(queue: queueName,
                                     autoAck: true,
-                                    consumer: consumer);
-
-                Console.WriteLine("Waiting for messages");
+                                    consumer: consumer);                
                 Console.ReadLine();
             }
 
