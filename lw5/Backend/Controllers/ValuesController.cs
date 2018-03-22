@@ -18,7 +18,7 @@ namespace Backend.Controllers
         private IActionResult GetRankFromDbById(string id)
         {
             int tryCount = 5;
-            int sleepTime = 200;
+            int sleepTime = 500;
             ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost, abortConnect=false");
             IDatabase db = redis.GetDatabase();
 
