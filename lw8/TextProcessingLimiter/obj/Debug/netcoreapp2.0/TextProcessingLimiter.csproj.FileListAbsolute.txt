@@ -1,0 +1,10 @@
+E:\C#Projs\RP\lw8\TextProcessingLimiter\obj\Debug\netcoreapp2.0\TextProcessingLimiter.csproj.CoreCompileInputs.cache
+E:\C#Projs\RP\lw8\TextProcessingLimiter\obj\Debug\netcoreapp2.0\TextProcessingLimiter.AssemblyInfoInputs.cache
+E:\C#Projs\RP\lw8\TextProcessingLimiter\obj\Debug\netcoreapp2.0\TextProcessingLimiter.AssemblyInfo.cs
+E:\C#Projs\RP\lw8\TextProcessingLimiter\bin\Debug\netcoreapp2.0\TextProcessingLimiter.deps.json
+E:\C#Projs\RP\lw8\TextProcessingLimiter\bin\Debug\netcoreapp2.0\TextProcessingLimiter.runtimeconfig.json
+E:\C#Projs\RP\lw8\TextProcessingLimiter\bin\Debug\netcoreapp2.0\TextProcessingLimiter.runtimeconfig.dev.json
+E:\C#Projs\RP\lw8\TextProcessingLimiter\bin\Debug\netcoreapp2.0\TextProcessingLimiter.dll
+E:\C#Projs\RP\lw8\TextProcessingLimiter\bin\Debug\netcoreapp2.0\TextProcessingLimiter.pdb
+E:\C#Projs\RP\lw8\TextProcessingLimiter\obj\Debug\netcoreapp2.0\TextProcessingLimiter.dll
+E:\C#Projs\RP\lw8\TextProcessingLimiter\obj\Debug\netcoreapp2.0\TextProcessingLimiter.pdb
